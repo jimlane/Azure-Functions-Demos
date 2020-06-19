@@ -1,0 +1,36 @@
+{
+  "disabled": false,
+  "bindings": [
+      {
+          "authLevel": "anonymous",
+          "type": "httpTrigger",
+          "direction": "in",
+          "name": "req",
+          "route": "messages",
+          "methods": [
+              "post"
+          ]
+      },
+      {
+          "type": "http",
+          "direction": "out",
+          "name": "res"
+      },
+      {
+          "name": "cosmosDBMessage",
+          "type": "cosmosDB",
+          "databaseName": "chat",
+          "collectionName": "messages",
+          "createIfNotExists": true, 
+          "connectionStringSetting": "CosmosDBConnectionString",
+          "direction": "out"
+      },
+      {
+          "type": "signalR",
+          "name": "signalRMessages",
+          "hubName": "chat",
+          "connectionStringSetting": "AzureSignalRConnectionString",
+          "direction": "out"
+      }
+  ]
+}
