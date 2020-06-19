@@ -33,6 +33,6 @@ Output Bindings:
 The application utilizes three separate JS based Azure Functions to provide application API's. The chat client (index.html) is a JS SPA located in the content folder. The client depends upon the following settings:
 - window.apiBaseUrl: Azure SignalR Service endpoint
 
-The GetMessages and CreateMessage functions bind to the hub of the Azure SignalR service instance through their respective output and input bindings. The client will thus invoke the Azure Function CreateMessage when a new chat message is sent and automatically receive any chat messages through the Azure Function GetMessages whenever other clients do the same.
-
-The CreateMessage function has an output binding to Azure CosmosDB which will persist the message content as well as user name that the GetMessages function will retrieve through its input binding.
+The GetMessages and CreateMessage functions bind to the hub of the Azure SignalR service instance through their respective output and input bindings. The client will thus invoke the Azure Function CreateMessage when a new chat message is sent and automatically receive any chat messages through the Azure Function GetMessages whenever other clients do the same. The CreateMessage function has an output binding to Azure CosmosDB which will persist the message content as well as user name that the GetMessages function will retrieve through its input binding. These two functions depend upon the following settings for connectivity:
+- CosmosDBConnectionString: connection string to specified CosmosDB backend e.g. *AccountEndpoint=https://<your_cosmosdb>.documents.azure.com;AccessKey=<your_key>;*
+- AzureSignalRConnectionString: connection string to specified Azure SignalR instance e.g. *Endpoint=https://<your_signalr>.signalr.net;AccessKey=<your_key>;version=1.0;*
