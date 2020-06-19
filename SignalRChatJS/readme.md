@@ -15,7 +15,7 @@ This project demonstrates creating a serverless chat application utilizing JavaS
     ms.service="azure-functions"
     ms.devlang="JS"/>
 
-![Azure Functions Serverless Chat Sample App](../images/ServerlessChat1.png)
+![Azure Functions Serverless Chat Sample](../images/ServerlessChat1.png)
 
 Azure Functions:
 - Version: 2.0
