@@ -18,10 +18,13 @@ This project demonstrates creating a serverless chat application utilizing JavaS
 ![Azure Functions Serverless Chat Sample App](../images/ServerlessChat1.png)
 
 Azure Functions Version: 2.0
+
 Extensions:
 - Microsoft.Azure.Functions.ExtensionBundle
+
 Input Bindings:
 - HTTP
+
 Output Bindings:
 - CosmosDB
 - Azure SignalR
