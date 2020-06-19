@@ -22,16 +22,13 @@ Azure Functions Version: 2.0
 Extensions:
 - Microsoft.Azure.Functions.ExtensionBundle
 
-Input Bindings:
-- HTTP
+Input Bindings: HTTP
 
 Output Bindings:
 - CosmosDB
 - Azure SignalR
 
-The application utilizes the Azure.Identity.SecretClient class in order to access an Azure Key Vault. A local instance of this class is instantiated utilizing:
-- Key Vault URI
-- Azure.Identity.ClientSecretCredential token
+The application utilizes three separate JS based Azure Functions to provide application API's. The chat client (index.html) is a JS SPA located in the content folder. 
 
 The ClientSecretCredential token is returned from a call to the Azure.Identity.ClientSecretCredential constructor utilizing:
 - Azure Tenant ID
