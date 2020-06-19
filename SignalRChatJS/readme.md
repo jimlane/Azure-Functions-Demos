@@ -17,11 +17,14 @@ This project demonstrates creating a serverless chat application utilizing JavaS
 
 ![Azure Functions Serverless Chat Sample App](../images/ServerlessChat1.png)
 
-Assemblies utilized:
-- Azure.Identity
-- Azure.Security.KeyVault
-- Azure.Storage
-- System.Configuration
+Azure Functions Version: 2.0
+Extensions:
+- Microsoft.Azure.Functions.ExtensionBundle
+Input Bindings:
+- HTTP
+Output Bindings:
+- CosmosDB
+- Azure SignalR
 
 The application utilizes the Azure.Identity.SecretClient class in order to access an Azure Key Vault. A local instance of this class is instantiated utilizing:
 - Key Vault URI
