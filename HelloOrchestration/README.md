@@ -15,7 +15,7 @@ This project demonstrates implementing a fan-out/fan-in application pattern usin
     ms.service="azure-functions"
     ms.devlang="C#"/>
 
-![Azure Functions Serverless Chat Sample](../images/ServerlessChat1.png)
+![Azure Functions Orchestration Sample](../images/HelloOrch1.png)
 
 Azure Functions:
 - Version: 2.0
