@@ -19,7 +19,7 @@ This project demonstrates creating a serverless chat application utilizing C# ba
 
 Azure Functions:
 - Version: 2.0
-- Framework: .Net Standard 2.0
+- Framework: DotNet Standard 2.0
 
 Extensions:
 - Microsoft.Azure.Functions.ExtensionBundle
@@ -36,7 +36,7 @@ Output Bindings:
 - CosmosDB
 - Azure SignalR
 
-The application utilizes three separate C# based Azure Functions to provide application API's. The chat client ([index.html](./content/index.html)) is a JS SPA located in the [content](./content) folder. It utilizes the [ASP.Net Core SignalR JavaScript client](https://docs.microsoft.com/en-us/aspnet/core/signalr/javascript-client?view=aspnetcore-3.1) for connectivity to the Azure SignalR service instance, and depends upon the following setting:
+The application utilizes three separate C# based Azure Functions to provide application API's. The chat client ([index.html](./appspa/index.html)) is a JS SPA located in the [appspa](./appspa) folder. It utilizes the [ASP.Net Core SignalR JavaScript client](https://docs.microsoft.com/en-us/aspnet/core/signalr/javascript-client?view=aspnetcore-3.1) for connectivity to the Azure SignalR service instance, and depends upon the following setting:
 - window.apiBaseUrl: Azure SignalR Service endpoint
 
 The GetMessages and CreateMessage functions bind to the hub of the Azure SignalR service instance through their respective output and input bindings. The client will thus invoke the Azure Function CreateMessage when a new chat message is sent to the SignalR hub and automatically receive any chat messages through the Azure Function GetMessages whenever other clients do the same. The CreateMessage function also has an output binding to Azure CosmosDB which will persist the message content as well as user name that the GetMessages function will retrieve through its input binding. These two functions depend upon the following settings for connectivity:
