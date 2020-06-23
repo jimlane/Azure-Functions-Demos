@@ -46,3 +46,10 @@ You can use the shown **StatusQueryGetURI** to return the overall status and res
 
 ![Durable Framework Status Results](../images/HelloOrch3.png)
 
+When the orchestrator function starts, it creates a System.Collections.Generic.List object of type System.String which will be used to contain the outputs from the activity functions. It then creates three activity functions asyncronously via the CallActivityAsync method of the DurableOrchestrationContext object which is passed in to the orchestrator function via the OrchestrationTrigger input binding. The instantiation of the activity functions is performed within the Add method of the List object, so that the activity function's output will be automatically added to the list when each function completes. 
+
+Since the activity functions are called asyncronously this signals to the Durable Functions Framework that execuation of the orchestrator function whould be terminated at this point in order to allow the activity functions to complete. The orchestrator will be invoked again after all activity functions complete. 
+
+The ActivityTrigger input binding of the activity function flags its function type to the Durable Functions Framework. The framework will then keep track of all of the activity instances for a particular orchestrator in order to signal back that all activities have either completed or timed out. These activity functions simply log the string passed to them and use that string in the returned message. 
+
+When all of the activity functions have completed, the framework will call the orchestrator function again. The orchestrator function begins a replay, which means it will execute all of its code from the beginning. This is an important concept, since you will need to code your orchestrator function logic to allow for proper execution during replays. 
