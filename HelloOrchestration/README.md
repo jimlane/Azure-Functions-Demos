@@ -17,18 +17,24 @@ This project demonstrates implementing a fan-out/fan-in application pattern usin
 
 ![Azure Functions Orchestration Sample](../images/HelloOrch1.png)
 
-Azure Functions:
+#### Azure Functions:
 - Version: 2.0
-- Runtime: Node
+- Runtime: DotNet Core 2.1
 
-Extensions:
-- Microsoft.Azure.Functions.ExtensionBundle
+#### Extensions:
+- Microsoft.Azure.WebJobs.Extensions.Http
+- Microsoft.Azure.WebJobs.Extensions.DurableTask
+- Microsoft.NET.Sdk.Functions
 
-Input Bindings: HTTP
+#### Starter Function
+Input Bindings: HTTP <br />
+Output Bindings: IDurableOrchestrationClient
 
-Output Bindings:
-- CosmosDB
-- Azure SignalR
+#### Orchestrator Function
+Input Bindings: IDurableOrchestrationContext
+
+#### Activity Function
+Input Bindings: ActivityTrigger
 
 The application utilizes three separate JS based Azure Functions to provide application API's. The chat client ([index.html](./content/index.html)) is a JS SPA located in the [content](./content) folder. It utilizes the [ASP.Net Core SignalR JavaScript client](https://docs.microsoft.com/en-us/aspnet/core/signalr/javascript-client?view=aspnetcore-3.1) for connectivity to the Azure SignalR service instance, and depends upon the following setting:
 - window.apiBaseUrl: Azure SignalR Service endpoint
