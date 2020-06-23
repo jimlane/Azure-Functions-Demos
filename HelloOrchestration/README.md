@@ -38,4 +38,11 @@ Input Bindings: ActivityTrigger
 
 ### Overview
 
-The application utilizes a starter function with an HTTP trigger that accepts either a GET or POST action. The starter function then asyncronously instantiates the orchestrator function, logs the startup activity and returns a CheckStatusResponse endpoint. This return manifests in the browser as different endpoints that can be queried afterwards where the Azure Functions Durable Framework will return status and information about this durable function instance.
+The application utilizes a starter function with an HTTP trigger that accepts either a GET or POST action. The starter function then asyncronously instantiates the orchestrator function, logs the startup activity and returns a CheckStatusResponse endpoint. This return manifests in the browser as different endpoints that can be queried afterwards where the Azure Functions Durable Framework will return status and information about this durable function instance:
+
+![Durable Framework Status Endpoint](../images/HelloOrch2.png)
+
+You can use the shown **StatusQueryGetURI** to return the overall status and results from the activity function runs:
+
+![Durable Framework Status Results](../images/HelloOrch3.png)
+
