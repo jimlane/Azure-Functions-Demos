@@ -6,11 +6,11 @@ namespace ApprovalOrchestration
 {
     public static class Approval
     {
-        [FunctionName("Approval")]
-        public static string SayHello([ActivityTrigger] string name, ILogger log)
+        [FunctionName("ApprovalFunction")]
+        public static string ApprovalFunction([ActivityTrigger] string action, ILogger log)
         {
-            log.LogInformation($"Project proposal has been - {name}");
-            return $"Your project design proposal has been - {name}";
+            log.LogInformation($"Project proposal has been - {action}");
+            return $"Your project design proposal has been - {action}";
         }
     }
 }
