@@ -1,9 +1,3 @@
-# Azure Functions Demos - Approval Orchestration
-
-## Overview
-
-This project demonstrates implements a basic approval gate application pattern using the Azure Durable Functions Framework. It is a variation of one of the Azure Quickstart walkthrougs available [here](https://docs.microsoft.com/en-us/azure/azure-functions/durable/durable-functions-external-events?tabs=csharp)
-
 <properties
     pageTitle="Azure Functions Approval Orchestration"
     description="Demo of Azure Durable Functions framework"
@@ -16,6 +10,10 @@ This project demonstrates implements a basic approval gate application pattern u
     ms.devlang="C#"/>
 
 ![Azure Functions Approval Orchestration Sample](../images/ApprovalOrch1.png)
+
+## Overview
+
+This project demonstrates implements a basic approval gate application pattern using the Azure Durable Functions Framework. It is a variation of one of the Azure Quickstart walkthrougs available [here](https://docs.microsoft.com/en-us/azure/azure-functions/durable/durable-functions-external-events?tabs=csharp)
 
 #### Azure Functions:
 - Version: 2.0
